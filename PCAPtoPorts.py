@@ -68,8 +68,6 @@ def result_printer(indicator, data):
         for connection in data[ip]:
             output = connection.split(':')
             print('\t' + ''.join(element.ljust(25) for element in output))
-        #print('\n\n')
-
 
 
 
@@ -127,51 +125,3 @@ for packet in cap:
 result_printer('incoming', incoming)
 print('\n' + Back.LIGHTBLUE_EX + ' ' * 108 + Style.RESET_ALL)
 result_printer('outgoing', outgoing)
-
-
-"""
-# Print the results
-if args.srcport is True and args.dstport is True:
-    output_header = ['TYPE', 'SOURCE PORT', 'DESTINATION PORT', 'ORIGIN IP']
-elif args.srcport is True:
-    output_header = ['TYPE', 'SOURCE PORT', 'ORIGIN IP']
-elif args.dstport is True:
-    output_header = ['TYPE', 'DESTINATION PORT', 'ORIGIN IP']
-else:
-    output_header = ['TYPE', 'ORIGIN IP']
-
-print('\nINCOMING TRAFFIC')
-for ip in incoming:
-    print(Style.DIM + '\t' + '=' * 100 + Style.RESET_ALL)
-    print('\t{}Incoming{} traffic from IP:\t\t\t\t\t\t\t{}{}{}'.format(Back.LIGHTBLUE_EX, Style.RESET_ALL,
-                                                                       Back.LIGHTBLUE_EX, ip, Style.RESET_ALL))
-    print(Style.DIM + '\t' + '-' * 100 + Style.RESET_ALL)
-    print('\t' + ''.join(element.ljust(25) for element in output_header))
-    print(Style.DIM + '\t' + '-' * 100 + Style.RESET_ALL)
-    for connection in incoming[ip]:
-        output = connection.split(':')
-        print('\t' + ''.join(element.ljust(25) for element in output))
-    print('\n\n')
-
-if args.srcport is True and args.dstport is True:
-    output_header = ['TYPE', 'SOURCE PORT', 'DESTINATION PORT', 'DESTINATION IP']
-elif args.srcport is True:
-    output_header = ['TYPE', 'SOURCE PORT', 'DESTINATION IP']
-elif args.dstport is True:
-    output_header = ['TYPE', 'DESTINATION PORT', 'DESTINATION IP']
-else:
-    output_header = ['TYPE', 'DESTINATION IP']
-
-print('\n' + Back.LIGHTRED_EX + ' ' * 108 + Style.RESET_ALL)
-print('OUTGOING TRAFFIC')
-for ip in outgoing:
-    print(Style.DIM + '\t' + '=' * 100 + Style.RESET_ALL)
-    print('\t{}Outgoing{} traffic to IP:\t\t\t\t\t\t\t\t{}{}{}'.format(Back.LIGHTBLUE_EX, Style.RESET_ALL,
-                                                                       Back.LIGHTBLUE_EX, ip, Style.RESET_ALL))
-    print(Style.DIM + '\t' + '-' * 100 + Style.RESET_ALL)
-    print('\t' + ''.join(element.ljust(25) for element in output_header))
-    print(Style.DIM + '\t' + '-' * 100 + Style.RESET_ALL)
-    for connection in outgoing[ip]:
-        output = connection.split(':')
-        print('\t' + ''.join(element.ljust(25) for element in output))
-    print('\n\n')"""
